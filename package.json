@@ -1,0 +1,31 @@
+{
+  "name": "react-freeze-dry",
+  "version": "1.0.0",
+  "description": "Utility to render React trees to static HTML files",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "babel index.js --out-dir lib & babel input --out-dir lib/input",
+    "build": "npm run transpile && node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "husky": "^4.2.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet-async": "^1.0.4",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  }
+}
